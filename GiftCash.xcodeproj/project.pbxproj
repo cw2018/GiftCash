@@ -22,6 +22,11 @@
 		A65C233C1A5BD96A00BA476A /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A65C233B1A5BD96A00BA476A /* CoreDataTableViewController.m */; };
 		A65C233F1A5BE40300BA476A /* OutgoListTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A65C233E1A5BE40300BA476A /* OutgoListTVC.m */; };
 		A65C23421A5BEAE200BA476A /* OutgoListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A65C23411A5BEAE200BA476A /* OutgoListTableViewCell.m */; };
+		A65C23451A5C04DC00BA476A /* CommonUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = A65C23441A5C04DC00BA476A /* CommonUtils.m */; };
+		A65C23481A5C0FCA00BA476A /* OutgoAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A65C23471A5C0FCA00BA476A /* OutgoAccountViewController.m */; };
+		A65C234A1A5C14B600BA476A /* OutgoAccountSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A65C23491A5C14B600BA476A /* OutgoAccountSectionHeaderView.xib */; };
+		A65C234D1A5C157300BA476A /* OutgoAccountSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = A65C234C1A5C157300BA476A /* OutgoAccountSectionHeaderView.m */; };
+		A65C23501A5C278200BA476A /* OutgoAccountMoneyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A65C234F1A5C278200BA476A /* OutgoAccountMoneyTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +68,15 @@
 		A65C233E1A5BE40300BA476A /* OutgoListTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OutgoListTVC.m; path = controller/OutgoListTVC.m; sourceTree = "<group>"; };
 		A65C23401A5BEAE200BA476A /* OutgoListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OutgoListTableViewCell.h; path = view/OutgoListTableViewCell.h; sourceTree = "<group>"; };
 		A65C23411A5BEAE200BA476A /* OutgoListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OutgoListTableViewCell.m; path = view/OutgoListTableViewCell.m; sourceTree = "<group>"; };
+		A65C23431A5C04DC00BA476A /* CommonUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonUtils.h; sourceTree = "<group>"; };
+		A65C23441A5C04DC00BA476A /* CommonUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonUtils.m; sourceTree = "<group>"; };
+		A65C23461A5C0FCA00BA476A /* OutgoAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OutgoAccountViewController.h; path = controller/OutgoAccountViewController.h; sourceTree = "<group>"; };
+		A65C23471A5C0FCA00BA476A /* OutgoAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OutgoAccountViewController.m; path = controller/OutgoAccountViewController.m; sourceTree = "<group>"; };
+		A65C23491A5C14B600BA476A /* OutgoAccountSectionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = OutgoAccountSectionHeaderView.xib; path = view/OutgoAccountSectionHeaderView.xib; sourceTree = "<group>"; };
+		A65C234B1A5C157300BA476A /* OutgoAccountSectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OutgoAccountSectionHeaderView.h; path = view/OutgoAccountSectionHeaderView.h; sourceTree = "<group>"; };
+		A65C234C1A5C157300BA476A /* OutgoAccountSectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OutgoAccountSectionHeaderView.m; path = view/OutgoAccountSectionHeaderView.m; sourceTree = "<group>"; };
+		A65C234E1A5C278200BA476A /* OutgoAccountMoneyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OutgoAccountMoneyTableViewCell.h; path = view/OutgoAccountMoneyTableViewCell.h; sourceTree = "<group>"; };
+		A65C234F1A5C278200BA476A /* OutgoAccountMoneyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OutgoAccountMoneyTableViewCell.m; path = view/OutgoAccountMoneyTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,12 +118,13 @@
 		A65C22E91A5BBD7700BA476A /* GiftCash */ = {
 			isa = PBXGroup;
 			children = (
-				A65C22F71A5BBD7700BA476A /* Main.storyboard */,
 				A65C23141A5BBF6E00BA476A /* view */,
 				A65C23151A5BBF7200BA476A /* controller */,
 				A65C23131A5BBF6700BA476A /* model */,
 				A65C22EE1A5BBD7700BA476A /* AppDelegate.h */,
 				A65C22EF1A5BBD7700BA476A /* AppDelegate.m */,
+				A65C23431A5C04DC00BA476A /* CommonUtils.h */,
+				A65C23441A5C04DC00BA476A /* CommonUtils.m */,
 				A65C22FA1A5BBD7700BA476A /* Images.xcassets */,
 				A65C22FC1A5BBD7700BA476A /* LaunchScreen.xib */,
 				A65C22EA1A5BBD7700BA476A /* Supporting Files */,
@@ -162,6 +177,12 @@
 		A65C23141A5BBF6E00BA476A /* view */ = {
 			isa = PBXGroup;
 			children = (
+				A65C22F71A5BBD7700BA476A /* Main.storyboard */,
+				A65C234E1A5C278200BA476A /* OutgoAccountMoneyTableViewCell.h */,
+				A65C234F1A5C278200BA476A /* OutgoAccountMoneyTableViewCell.m */,
+				A65C23491A5C14B600BA476A /* OutgoAccountSectionHeaderView.xib */,
+				A65C234B1A5C157300BA476A /* OutgoAccountSectionHeaderView.h */,
+				A65C234C1A5C157300BA476A /* OutgoAccountSectionHeaderView.m */,
 				A65C23401A5BEAE200BA476A /* OutgoListTableViewCell.h */,
 				A65C23411A5BEAE200BA476A /* OutgoListTableViewCell.m */,
 			);
@@ -177,6 +198,8 @@
 				A65C23171A5BBFEB00BA476A /* MainTabBarController.m */,
 				A65C233A1A5BD96A00BA476A /* CoreDataTableViewController.h */,
 				A65C233B1A5BD96A00BA476A /* CoreDataTableViewController.m */,
+				A65C23461A5C0FCA00BA476A /* OutgoAccountViewController.h */,
+				A65C23471A5C0FCA00BA476A /* OutgoAccountViewController.m */,
 			);
 			name = controller;
 			sourceTree = "<group>";
@@ -263,6 +286,7 @@
 			files = (
 				A65C22F91A5BBD7700BA476A /* Main.storyboard in Resources */,
 				A65C22FE1A5BBD7700BA476A /* LaunchScreen.xib in Resources */,
+				A65C234A1A5C14B600BA476A /* OutgoAccountSectionHeaderView.xib in Resources */,
 				A65C22FB1A5BBD7700BA476A /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -285,13 +309,17 @@
 				A65C23421A5BEAE200BA476A /* OutgoListTableViewCell.m in Sources */,
 				A65C232D1A5BD46B00BA476A /* GiftCash.xcdatamodeld in Sources */,
 				A65C22F01A5BBD7700BA476A /* AppDelegate.m in Sources */,
+				A65C23501A5C278200BA476A /* OutgoAccountMoneyTableViewCell.m in Sources */,
 				A65C233C1A5BD96A00BA476A /* CoreDataTableViewController.m in Sources */,
 				A65C23331A5BD48500BA476A /* Event.m in Sources */,
 				A65C23301A5BD48400BA476A /* Contact.m in Sources */,
 				A65C23181A5BBFEB00BA476A /* MainTabBarController.m in Sources */,
 				A65C233F1A5BE40300BA476A /* OutgoListTVC.m in Sources */,
 				A65C23361A5BD48500BA476A /* Income.m in Sources */,
+				A65C234D1A5C157300BA476A /* OutgoAccountSectionHeaderView.m in Sources */,
+				A65C23451A5C04DC00BA476A /* CommonUtils.m in Sources */,
 				A65C22ED1A5BBD7700BA476A /* main.m in Sources */,
+				A65C23481A5C0FCA00BA476A /* OutgoAccountViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

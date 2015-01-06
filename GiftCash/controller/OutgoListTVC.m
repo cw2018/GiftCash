@@ -11,6 +11,8 @@
 #import "Account.h"
 #import "Contact.h"
 #import "Event.h"
+#import "CommonUtils.h"
+#import "OutgoAccountViewController.h"
 
 @interface OutgoListTVC ()
 
@@ -44,11 +46,19 @@
 {
     OutgoListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Outgo List Cell"];
     Account *account = [self.fetchedResultsController objectAtIndexPath:indexPath];
-//    cell.dateLabel.text = account.date
+    cell.dateLabel.text = [CommonUtils mouthAndDayOfDate:account.date];
     cell.contactLabel.text = account.contact.name;
     cell.eventLabel.text = account.event.name;
     cell.moneyLabel.text = [NSString stringWithFormat:@"%@", account.money];
     return cell;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.destinationViewController isKindOfClass:[OutgoAccountViewController class]]) {
+        OutgoAccountViewController *outgoAccountVC = segue.destinationViewController;
+        outgoAccountVC.context = self.context;
+    }
 }
 
 @end
