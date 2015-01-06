@@ -9,13 +9,17 @@
 /* Begin PBXBuildFile section */
 		A65C22ED1A5BBD7700BA476A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A65C22EC1A5BBD7700BA476A /* main.m */; };
 		A65C22F01A5BBD7700BA476A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A65C22EF1A5BBD7700BA476A /* AppDelegate.m */; };
-		A65C22F31A5BBD7700BA476A /* GiftCash.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A65C22F11A5BBD7700BA476A /* GiftCash.xcdatamodeld */; };
-		A65C22F61A5BBD7700BA476A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A65C22F51A5BBD7700BA476A /* ViewController.m */; };
 		A65C22F91A5BBD7700BA476A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A65C22F71A5BBD7700BA476A /* Main.storyboard */; };
 		A65C22FB1A5BBD7700BA476A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A65C22FA1A5BBD7700BA476A /* Images.xcassets */; };
 		A65C22FE1A5BBD7700BA476A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A65C22FC1A5BBD7700BA476A /* LaunchScreen.xib */; };
 		A65C230A1A5BBD7800BA476A /* GiftCashTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A65C23091A5BBD7800BA476A /* GiftCashTests.m */; };
 		A65C23181A5BBFEB00BA476A /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = A65C23171A5BBFEB00BA476A /* MainTabBarController.m */; };
+		A65C23271A5BD35800BA476A /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = A65C23261A5BD35800BA476A /* Account.m */; };
+		A65C232A1A5BD39700BA476A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A65C23291A5BD39700BA476A /* ViewController.m */; };
+		A65C232D1A5BD46B00BA476A /* GiftCash.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A65C232B1A5BD46B00BA476A /* GiftCash.xcdatamodeld */; };
+		A65C23301A5BD48400BA476A /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = A65C232F1A5BD48400BA476A /* Contact.m */; };
+		A65C23331A5BD48500BA476A /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = A65C23321A5BD48500BA476A /* Event.m */; };
+		A65C23361A5BD48500BA476A /* Income.m in Sources */ = {isa = PBXBuildFile; fileRef = A65C23351A5BD48500BA476A /* Income.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +38,6 @@
 		A65C22EC1A5BBD7700BA476A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A65C22EE1A5BBD7700BA476A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A65C22EF1A5BBD7700BA476A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		A65C22F21A5BBD7700BA476A /* GiftCash.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GiftCash.xcdatamodel; sourceTree = "<group>"; };
-		A65C22F41A5BBD7700BA476A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		A65C22F51A5BBD7700BA476A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		A65C22F81A5BBD7700BA476A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A65C22FA1A5BBD7700BA476A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A65C22FD1A5BBD7700BA476A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -45,6 +46,17 @@
 		A65C23091A5BBD7800BA476A /* GiftCashTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GiftCashTests.m; sourceTree = "<group>"; };
 		A65C23161A5BBFEB00BA476A /* MainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainTabBarController.h; path = controller/MainTabBarController.h; sourceTree = "<group>"; };
 		A65C23171A5BBFEB00BA476A /* MainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainTabBarController.m; path = controller/MainTabBarController.m; sourceTree = "<group>"; };
+		A65C23251A5BD35800BA476A /* Account.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Account.h; path = model/Account.h; sourceTree = "<group>"; };
+		A65C23261A5BD35800BA476A /* Account.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Account.m; path = model/Account.m; sourceTree = "<group>"; };
+		A65C23281A5BD39700BA476A /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = controller/ViewController.h; sourceTree = "<group>"; };
+		A65C23291A5BD39700BA476A /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = controller/ViewController.m; sourceTree = "<group>"; };
+		A65C232C1A5BD46B00BA476A /* GiftCash.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GiftCash.xcdatamodel; sourceTree = "<group>"; };
+		A65C232E1A5BD48400BA476A /* Contact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Contact.h; path = model/Contact.h; sourceTree = "<group>"; };
+		A65C232F1A5BD48400BA476A /* Contact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Contact.m; path = model/Contact.m; sourceTree = "<group>"; };
+		A65C23311A5BD48500BA476A /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Event.h; path = model/Event.h; sourceTree = "<group>"; };
+		A65C23321A5BD48500BA476A /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Event.m; path = model/Event.m; sourceTree = "<group>"; };
+		A65C23341A5BD48500BA476A /* Income.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Income.h; path = model/Income.h; sourceTree = "<group>"; };
+		A65C23351A5BD48500BA476A /* Income.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Income.m; path = model/Income.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,7 +140,15 @@
 		A65C23131A5BBF6700BA476A /* model */ = {
 			isa = PBXGroup;
 			children = (
-				A65C22F11A5BBD7700BA476A /* GiftCash.xcdatamodeld */,
+				A65C232B1A5BD46B00BA476A /* GiftCash.xcdatamodeld */,
+				A65C23341A5BD48500BA476A /* Income.h */,
+				A65C23351A5BD48500BA476A /* Income.m */,
+				A65C23311A5BD48500BA476A /* Event.h */,
+				A65C23321A5BD48500BA476A /* Event.m */,
+				A65C232E1A5BD48400BA476A /* Contact.h */,
+				A65C232F1A5BD48400BA476A /* Contact.m */,
+				A65C23251A5BD35800BA476A /* Account.h */,
+				A65C23261A5BD35800BA476A /* Account.m */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -143,8 +163,8 @@
 		A65C23151A5BBF7200BA476A /* controller */ = {
 			isa = PBXGroup;
 			children = (
-				A65C22F41A5BBD7700BA476A /* ViewController.h */,
-				A65C22F51A5BBD7700BA476A /* ViewController.m */,
+				A65C23281A5BD39700BA476A /* ViewController.h */,
+				A65C23291A5BD39700BA476A /* ViewController.m */,
 				A65C23161A5BBFEB00BA476A /* MainTabBarController.h */,
 				A65C23171A5BBFEB00BA476A /* MainTabBarController.m */,
 			);
@@ -251,11 +271,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A65C232A1A5BD39700BA476A /* ViewController.m in Sources */,
+				A65C23271A5BD35800BA476A /* Account.m in Sources */,
+				A65C232D1A5BD46B00BA476A /* GiftCash.xcdatamodeld in Sources */,
 				A65C22F01A5BBD7700BA476A /* AppDelegate.m in Sources */,
+				A65C23331A5BD48500BA476A /* Event.m in Sources */,
+				A65C23301A5BD48400BA476A /* Contact.m in Sources */,
 				A65C23181A5BBFEB00BA476A /* MainTabBarController.m in Sources */,
+				A65C23361A5BD48500BA476A /* Income.m in Sources */,
 				A65C22ED1A5BBD7700BA476A /* main.m in Sources */,
-				A65C22F61A5BBD7700BA476A /* ViewController.m in Sources */,
-				A65C22F31A5BBD7700BA476A /* GiftCash.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,13 +484,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		A65C22F11A5BBD7700BA476A /* GiftCash.xcdatamodeld */ = {
+		A65C232B1A5BD46B00BA476A /* GiftCash.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				A65C22F21A5BBD7700BA476A /* GiftCash.xcdatamodel */,
+				A65C232C1A5BD46B00BA476A /* GiftCash.xcdatamodel */,
 			);
-			currentVersion = A65C22F21A5BBD7700BA476A /* GiftCash.xcdatamodel */;
-			path = GiftCash.xcdatamodeld;
+			currentVersion = A65C232C1A5BD46B00BA476A /* GiftCash.xcdatamodel */;
+			name = GiftCash.xcdatamodeld;
+			path = model/GiftCash.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
