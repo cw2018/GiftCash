@@ -15,6 +15,7 @@
 		A65C22FB1A5BBD7700BA476A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A65C22FA1A5BBD7700BA476A /* Images.xcassets */; };
 		A65C22FE1A5BBD7700BA476A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A65C22FC1A5BBD7700BA476A /* LaunchScreen.xib */; };
 		A65C230A1A5BBD7800BA476A /* GiftCashTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A65C23091A5BBD7800BA476A /* GiftCashTests.m */; };
+		A65C23181A5BBFEB00BA476A /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = A65C23171A5BBFEB00BA476A /* MainTabBarController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,8 @@
 		A65C23031A5BBD7800BA476A /* GiftCashTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GiftCashTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A65C23081A5BBD7800BA476A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A65C23091A5BBD7800BA476A /* GiftCashTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GiftCashTests.m; sourceTree = "<group>"; };
+		A65C23161A5BBFEB00BA476A /* MainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainTabBarController.h; path = controller/MainTabBarController.h; sourceTree = "<group>"; };
+		A65C23171A5BBFEB00BA476A /* MainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainTabBarController.m; path = controller/MainTabBarController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,14 +86,14 @@
 		A65C22E91A5BBD7700BA476A /* GiftCash */ = {
 			isa = PBXGroup;
 			children = (
+				A65C22F71A5BBD7700BA476A /* Main.storyboard */,
+				A65C23141A5BBF6E00BA476A /* view */,
+				A65C23151A5BBF7200BA476A /* controller */,
+				A65C23131A5BBF6700BA476A /* model */,
 				A65C22EE1A5BBD7700BA476A /* AppDelegate.h */,
 				A65C22EF1A5BBD7700BA476A /* AppDelegate.m */,
-				A65C22F41A5BBD7700BA476A /* ViewController.h */,
-				A65C22F51A5BBD7700BA476A /* ViewController.m */,
-				A65C22F71A5BBD7700BA476A /* Main.storyboard */,
 				A65C22FA1A5BBD7700BA476A /* Images.xcassets */,
 				A65C22FC1A5BBD7700BA476A /* LaunchScreen.xib */,
-				A65C22F11A5BBD7700BA476A /* GiftCash.xcdatamodeld */,
 				A65C22EA1A5BBD7700BA476A /* Supporting Files */,
 			);
 			path = GiftCash;
@@ -120,6 +123,32 @@
 				A65C23081A5BBD7800BA476A /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A65C23131A5BBF6700BA476A /* model */ = {
+			isa = PBXGroup;
+			children = (
+				A65C22F11A5BBD7700BA476A /* GiftCash.xcdatamodeld */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		A65C23141A5BBF6E00BA476A /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = view;
+			sourceTree = "<group>";
+		};
+		A65C23151A5BBF7200BA476A /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				A65C22F41A5BBD7700BA476A /* ViewController.h */,
+				A65C22F51A5BBD7700BA476A /* ViewController.m */,
+				A65C23161A5BBFEB00BA476A /* MainTabBarController.h */,
+				A65C23171A5BBFEB00BA476A /* MainTabBarController.m */,
+			);
+			name = controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -223,6 +252,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A65C22F01A5BBD7700BA476A /* AppDelegate.m in Sources */,
+				A65C23181A5BBFEB00BA476A /* MainTabBarController.m in Sources */,
 				A65C22ED1A5BBD7700BA476A /* main.m in Sources */,
 				A65C22F61A5BBD7700BA476A /* ViewController.m in Sources */,
 				A65C22F31A5BBD7700BA476A /* GiftCash.xcdatamodeld in Sources */,
