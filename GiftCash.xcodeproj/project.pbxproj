@@ -15,11 +15,13 @@
 		A65C230A1A5BBD7800BA476A /* GiftCashTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A65C23091A5BBD7800BA476A /* GiftCashTests.m */; };
 		A65C23181A5BBFEB00BA476A /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = A65C23171A5BBFEB00BA476A /* MainTabBarController.m */; };
 		A65C23271A5BD35800BA476A /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = A65C23261A5BD35800BA476A /* Account.m */; };
-		A65C232A1A5BD39700BA476A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A65C23291A5BD39700BA476A /* ViewController.m */; };
 		A65C232D1A5BD46B00BA476A /* GiftCash.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A65C232B1A5BD46B00BA476A /* GiftCash.xcdatamodeld */; };
 		A65C23301A5BD48400BA476A /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = A65C232F1A5BD48400BA476A /* Contact.m */; };
 		A65C23331A5BD48500BA476A /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = A65C23321A5BD48500BA476A /* Event.m */; };
 		A65C23361A5BD48500BA476A /* Income.m in Sources */ = {isa = PBXBuildFile; fileRef = A65C23351A5BD48500BA476A /* Income.m */; };
+		A65C233C1A5BD96A00BA476A /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A65C233B1A5BD96A00BA476A /* CoreDataTableViewController.m */; };
+		A65C233F1A5BE40300BA476A /* OutgoListTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A65C233E1A5BE40300BA476A /* OutgoListTVC.m */; };
+		A65C23421A5BEAE200BA476A /* OutgoListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A65C23411A5BEAE200BA476A /* OutgoListTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,8 +50,6 @@
 		A65C23171A5BBFEB00BA476A /* MainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainTabBarController.m; path = controller/MainTabBarController.m; sourceTree = "<group>"; };
 		A65C23251A5BD35800BA476A /* Account.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Account.h; path = model/Account.h; sourceTree = "<group>"; };
 		A65C23261A5BD35800BA476A /* Account.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Account.m; path = model/Account.m; sourceTree = "<group>"; };
-		A65C23281A5BD39700BA476A /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = controller/ViewController.h; sourceTree = "<group>"; };
-		A65C23291A5BD39700BA476A /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = controller/ViewController.m; sourceTree = "<group>"; };
 		A65C232C1A5BD46B00BA476A /* GiftCash.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GiftCash.xcdatamodel; sourceTree = "<group>"; };
 		A65C232E1A5BD48400BA476A /* Contact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Contact.h; path = model/Contact.h; sourceTree = "<group>"; };
 		A65C232F1A5BD48400BA476A /* Contact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Contact.m; path = model/Contact.m; sourceTree = "<group>"; };
@@ -57,6 +57,12 @@
 		A65C23321A5BD48500BA476A /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Event.m; path = model/Event.m; sourceTree = "<group>"; };
 		A65C23341A5BD48500BA476A /* Income.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Income.h; path = model/Income.h; sourceTree = "<group>"; };
 		A65C23351A5BD48500BA476A /* Income.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Income.m; path = model/Income.m; sourceTree = "<group>"; };
+		A65C233A1A5BD96A00BA476A /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreDataTableViewController.h; path = controller/CoreDataTableViewController.h; sourceTree = "<group>"; };
+		A65C233B1A5BD96A00BA476A /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreDataTableViewController.m; path = controller/CoreDataTableViewController.m; sourceTree = "<group>"; };
+		A65C233D1A5BE40300BA476A /* OutgoListTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OutgoListTVC.h; path = controller/OutgoListTVC.h; sourceTree = "<group>"; };
+		A65C233E1A5BE40300BA476A /* OutgoListTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OutgoListTVC.m; path = controller/OutgoListTVC.m; sourceTree = "<group>"; };
+		A65C23401A5BEAE200BA476A /* OutgoListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OutgoListTableViewCell.h; path = view/OutgoListTableViewCell.h; sourceTree = "<group>"; };
+		A65C23411A5BEAE200BA476A /* OutgoListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OutgoListTableViewCell.m; path = view/OutgoListTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +162,8 @@
 		A65C23141A5BBF6E00BA476A /* view */ = {
 			isa = PBXGroup;
 			children = (
+				A65C23401A5BEAE200BA476A /* OutgoListTableViewCell.h */,
+				A65C23411A5BEAE200BA476A /* OutgoListTableViewCell.m */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -163,10 +171,12 @@
 		A65C23151A5BBF7200BA476A /* controller */ = {
 			isa = PBXGroup;
 			children = (
-				A65C23281A5BD39700BA476A /* ViewController.h */,
-				A65C23291A5BD39700BA476A /* ViewController.m */,
+				A65C233D1A5BE40300BA476A /* OutgoListTVC.h */,
+				A65C233E1A5BE40300BA476A /* OutgoListTVC.m */,
 				A65C23161A5BBFEB00BA476A /* MainTabBarController.h */,
 				A65C23171A5BBFEB00BA476A /* MainTabBarController.m */,
+				A65C233A1A5BD96A00BA476A /* CoreDataTableViewController.h */,
+				A65C233B1A5BD96A00BA476A /* CoreDataTableViewController.m */,
 			);
 			name = controller;
 			sourceTree = "<group>";
@@ -271,13 +281,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A65C232A1A5BD39700BA476A /* ViewController.m in Sources */,
 				A65C23271A5BD35800BA476A /* Account.m in Sources */,
+				A65C23421A5BEAE200BA476A /* OutgoListTableViewCell.m in Sources */,
 				A65C232D1A5BD46B00BA476A /* GiftCash.xcdatamodeld in Sources */,
 				A65C22F01A5BBD7700BA476A /* AppDelegate.m in Sources */,
+				A65C233C1A5BD96A00BA476A /* CoreDataTableViewController.m in Sources */,
 				A65C23331A5BD48500BA476A /* Event.m in Sources */,
 				A65C23301A5BD48400BA476A /* Contact.m in Sources */,
 				A65C23181A5BBFEB00BA476A /* MainTabBarController.m in Sources */,
+				A65C233F1A5BE40300BA476A /* OutgoListTVC.m in Sources */,
 				A65C23361A5BD48500BA476A /* Income.m in Sources */,
 				A65C22ED1A5BBD7700BA476A /* main.m in Sources */,
 			);

@@ -8,6 +8,11 @@
 
 #import "AppDelegate.h"
 #import "MainTabBarController.h"
+#import "OutgoListTVC.h"
+#import "Contact.h"
+#import "Event.h"
+#import "Account.h"
+#import "Income.h"
 
 @interface AppDelegate ()
 
@@ -15,11 +20,75 @@
 
 @implementation AppDelegate
 
+- (void)setupDefaultData
+{
+    Contact *contact1 = [NSEntityDescription insertNewObjectForEntityForName:@"Contact" inManagedObjectContext:self.managedObjectContext];
+    contact1.name = @"张三";
+    Contact *contact2 = [NSEntityDescription insertNewObjectForEntityForName:@"Contact" inManagedObjectContext:self.managedObjectContext];
+    contact2.name = @"李四";
+    Contact *contact3 = [NSEntityDescription insertNewObjectForEntityForName:@"Contact" inManagedObjectContext:self.managedObjectContext];
+    contact3.name = @"王五";
+    Contact *contact4 = [NSEntityDescription insertNewObjectForEntityForName:@"Contact" inManagedObjectContext:self.managedObjectContext];
+    contact4.name = @"章章";
+    
+    Event *event1 = [NSEntityDescription insertNewObjectForEntityForName:@"Event" inManagedObjectContext:self.managedObjectContext];
+    event1.name = @"结婚";
+    Event *event2 = [NSEntityDescription insertNewObjectForEntityForName:@"Event" inManagedObjectContext:self.managedObjectContext];
+    event2.name = @"生子";
+    Event *event3 = [NSEntityDescription insertNewObjectForEntityForName:@"Event" inManagedObjectContext:self.managedObjectContext];
+    event3.name = @"满月";
+    
+    
+    Account *account1 = [NSEntityDescription insertNewObjectForEntityForName:@"Account" inManagedObjectContext:self.managedObjectContext];
+    account1.money = @(800);
+    account1.event = event1;
+    account1.contact = contact1;
+    account1.date = [NSDate date];
+    
+    Account *account2 = [NSEntityDescription insertNewObjectForEntityForName:@"Account" inManagedObjectContext:self.managedObjectContext];
+    account2.money = @(600);
+    account2.event = event2;
+    account2.contact = contact2;
+    account2.date = [NSDate date];
+    
+    Account *account3 = [NSEntityDescription insertNewObjectForEntityForName:@"Account" inManagedObjectContext:self.managedObjectContext];
+    account3.money = @(400);
+    account3.event = event3;
+    account3.contact = contact3;
+    account3.date = [NSDate date];
+    account3.outgo = @(0);
+    
+    Account *account4 = [NSEntityDescription insertNewObjectForEntityForName:@"Account" inManagedObjectContext:self.managedObjectContext];
+    account4.money = @(200);
+    account4.event = event3;
+    account4.contact = contact4;
+    account4.date = [NSDate date];
+    account4.outgo = @(0);
+    
+    Income *income1 = [NSEntityDescription insertNewObjectForEntityForName:@"Income" inManagedObjectContext:self.managedObjectContext];
+    income1.date = [NSDate date];
+    income1.event = event1;
+    Income *income2 = [NSEntityDescription insertNewObjectForEntityForName:@"Income" inManagedObjectContext:self.managedObjectContext];
+    income2.date = [NSDate date];
+    income2.event = event2;
+    Income *income3 = [NSEntityDescription insertNewObjectForEntityForName:@"Income" inManagedObjectContext:self.managedObjectContext];
+    income3.date = [NSDate date];
+    income3.event = event3;
+    [income3 addAccountsObject:account3];
+    [income3 addAccountsObject:account4];
+    
+    [self saveContext];
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     MainTabBarController *tabBarController = (MainTabBarController *)self.window.rootViewController;
     tabBarController.context = self.managedObjectContext;
+    UINavigationController *nc = [tabBarController.viewControllers firstObject];
+    OutgoListTVC *outgoListTVC = (OutgoListTVC *)nc.topViewController;
+    outgoListTVC.context = self.managedObjectContext;
+    
+//    [self setupDefaultData];
     return YES;
 }
 
