@@ -194,12 +194,12 @@
 			children = (
 				A65C233D1A5BE40300BA476A /* OutgoListTVC.h */,
 				A65C233E1A5BE40300BA476A /* OutgoListTVC.m */,
+				A65C23461A5C0FCA00BA476A /* OutgoAccountViewController.h */,
+				A65C23471A5C0FCA00BA476A /* OutgoAccountViewController.m */,
 				A65C23161A5BBFEB00BA476A /* MainTabBarController.h */,
 				A65C23171A5BBFEB00BA476A /* MainTabBarController.m */,
 				A65C233A1A5BD96A00BA476A /* CoreDataTableViewController.h */,
 				A65C233B1A5BD96A00BA476A /* CoreDataTableViewController.m */,
-				A65C23461A5C0FCA00BA476A /* OutgoAccountViewController.h */,
-				A65C23471A5C0FCA00BA476A /* OutgoAccountViewController.m */,
 			);
 			name = controller;
 			sourceTree = "<group>";
@@ -512,6 +512,7 @@
 				A65C230F1A5BBD7800BA476A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A65C23101A5BBD7800BA476A /* Build configuration list for PBXNativeTarget "GiftCashTests" */ = {
 			isa = XCConfigurationList;
@@ -520,6 +521,7 @@
 				A65C23121A5BBD7800BA476A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

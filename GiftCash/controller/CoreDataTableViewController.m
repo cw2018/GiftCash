@@ -61,6 +61,17 @@
     return 44;
 }
 
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [self.context deleteObject:[self.fetchedResultsController objectAtIndexPath:indexPath]];
+        NSError *error;
+        if (![self.context save:&error]) {
+            NSLog(@"Can't Delete, %@ %@", error, [error localizedDescription]);
+        }
+    }
+}
+
 #pragma mark - FetchedResultsController Delegate
 - (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
     [self.tableView beginUpdates];

@@ -11,4 +11,5 @@
 @interface CommonUtils : NSObject
 + (NSString *)mouthAndDayOfDate:(NSDate *)date;
 + (NSString *)fullStringFromDate:(NSDate *)date;
++ (void)defaultAlertView:(NSString *)title message:(NSString *)msg;
 @end

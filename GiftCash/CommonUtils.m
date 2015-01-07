@@ -7,6 +7,7 @@
 //
 
 #import "CommonUtils.h"
+#import <UIKit/UIKit.h>
 
 @implementation CommonUtils
 + (NSString *)mouthAndDayOfDate:(NSDate *)date
@@ -21,5 +22,10 @@
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     dateFormatter.dateFormat = @"yyyy-MM-dd";
     return [dateFormatter stringFromDate:date];
+}
+
++ (void)defaultAlertView:(NSString *)title message:(NSString *)msg
+{
+    [[[UIAlertView alloc] initWithTitle:title message:msg delegate:self cancelButtonTitle:nil otherButtonTitles:@"确定", nil] show];
 }
 @end

@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Account.h"
 
 @interface OutgoAccountViewController : UIViewController
 @property (strong, nonatomic) NSManagedObjectContext *context;
+@property (strong, nonatomic) Account *account;
 @end

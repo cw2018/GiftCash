@@ -24,6 +24,9 @@
 @property (strong, nonatomic) NSArray *contactArray;
 @property (strong, nonatomic) NSArray *eventArray;
 
+@property (strong, nonatomic) Contact *selectedContact;
+@property (strong, nonatomic) Event *selectedEvent;
+
 @property (strong, nonatomic) NSMutableArray *sectionHeaderArray;
 @property (strong, nonatomic) NSMutableArray *outgoAccountPickerCellArray;
 
@@ -51,6 +54,7 @@ typedef NS_ENUM(NSInteger, OutgoAccountTableViewSection) {
     self.eventPicker.dataSource = self;
     
     self.datePicker = [[UIDatePicker alloc] init];
+    self.datePicker.locale = [NSLocale localeWithLocaleIdentifier:@"zh_CH"];
     self.datePicker.datePickerMode = UIDatePickerModeDate;
     [self.datePicker addTarget:self action:@selector(selectDate) forControlEvents:UIControlEventValueChanged];
     
@@ -70,8 +74,6 @@ typedef NS_ENUM(NSInteger, OutgoAccountTableViewSection) {
         oashView.open = NO;
         
         UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapSectionHeader:)];
-        tapGesture.numberOfTapsRequired = 1;
-        tapGesture.numberOfTouchesRequired = 1;
         [oashView addGestureRecognizer:tapGesture];
         [self.sectionHeaderArray addObject:oashView];
         
@@ -93,23 +95,93 @@ typedef NS_ENUM(NSInteger, OutgoAccountTableViewSection) {
     moneyCell.noteTV.clipsToBounds = YES;
     self.outgoAccountPickerCellArray[OutgoAccountTableViewSectionMoney] = moneyCell;
     
-    self.datePicker.date = [NSDate date];
+    
+    if (self.account) {
+        self.selectedContact = self.account.contact;
+        [self.contactPicker selectRow:[self.contactArray indexOfObject:self.selectedContact] inComponent:0 animated:NO];
+        self.selectedEvent = self.account.event;
+        [self.eventPicker selectRow:[self.eventArray indexOfObject:self.selectedEvent] inComponent:0 animated:NO];
+        self.datePicker.date = self.account.date;
+        moneyCell.moneyTF.text = [NSString stringWithFormat:@"%@", self.account.money];
+        moneyCell.noteTV.text = self.account.note;
+        self.navigationItem.title = @"编辑送礼账单";
+    } else {
+        self.navigationItem.title = @"添加送礼账单";
+        self.datePicker.date = [NSDate date];
+    }
     
 }
 
 - (void)selectDate {
-    
+    OutgoAccountSectionHeaderView *oashView = self.sectionHeaderArray[OutgoAccountTableViewSectionDate];
+    oashView.valueLabel.text = [CommonUtils fullStringFromDate:[self.datePicker date]];
 }
 
 - (void)tapSectionHeader:(UITapGestureRecognizer *)gestureRecongizer
 {
+    OutgoAccountSectionHeaderView *oashView = (OutgoAccountSectionHeaderView *)gestureRecongizer.view;
+    for (OutgoAccountSectionHeaderView *tmpshView in self.sectionHeaderArray) {
+        if (tmpshView.isOpen && tmpshView != oashView) {
+            tmpshView.open = NO;
+            break;
+        }
+    }
+    oashView.open = !oashView.open;
     
+    if (oashView.open) {
+        if (oashView.section == OutgoAccountTableViewSectionContact && !self.selectedContact) {
+            self.selectedContact = [self.contactArray firstObject];
+        } else if (oashView.section == OutgoAccountTableViewSectionEvent && !self.selectedEvent) {
+            self.selectedEvent = [self.eventArray firstObject];
+        }
+    }
+    [self.tableView reloadData];
 }
 
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Segue
+#define SAVE_OUTGO_ACCOUNT_UNWIND_SEGUE @"Save Outgo Account Unwind Segue"
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
+{
+    if ([identifier isEqualToString:SAVE_OUTGO_ACCOUNT_UNWIND_SEGUE]) {
+        OutgoAccountMoneyTableViewCell *moneyCell = self.outgoAccountPickerCellArray[OutgoAccountTableViewSectionMoney];
+        if (!self.selectedContact) {
+            [CommonUtils defaultAlertView:@"保存送礼账单" message:@"联系人不能为空"];
+            return NO;
+        } else if (!self.selectedEvent) {
+            [CommonUtils defaultAlertView:@"保存送礼账单" message:@"事由不能为空"];
+            return NO;
+        } else if (!self.datePicker.date) {
+            [CommonUtils defaultAlertView:@"保存送礼账单" message:@"日期不能为空"];
+            return NO;
+        } else if ([moneyCell.moneyTF.text doubleValue] <= 0) {
+            [CommonUtils defaultAlertView:@"保存送礼账单" message:@"金额不能为空"];
+            return NO;
+        } else {
+            return YES;
+        }
+    }
+    return [super shouldPerformSegueWithIdentifier:identifier sender:sender];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:SAVE_OUTGO_ACCOUNT_UNWIND_SEGUE]) {
+        if (!self.account) {
+            self.account = [NSEntityDescription insertNewObjectForEntityForName:@"Account" inManagedObjectContext:self.context];
+        }
+        self.account.contact = self.selectedContact;
+        self.account.event = self.selectedEvent;
+        self.account.date = self.datePicker.date;
+        OutgoAccountMoneyTableViewCell *moneyCell = self.outgoAccountPickerCellArray[OutgoAccountTableViewSectionMoney];
+        self.account.money = [NSNumber numberWithDouble:[moneyCell.moneyTF.text doubleValue]];
+        self.account.note = moneyCell.noteTV.text;
+    }
 }
 
 #pragma mark - Picker View DataSource
@@ -144,7 +216,15 @@ typedef NS_ENUM(NSInteger, OutgoAccountTableViewSection) {
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
-    
+    if (pickerView == self.contactPicker) {
+        OutgoAccountSectionHeaderView *oashView = self.sectionHeaderArray[OutgoAccountTableViewSectionContact];
+        self.selectedContact = [self.contactArray objectAtIndex:row];
+        oashView.valueLabel.text = self.selectedContact.name;
+    } else if (pickerView == self.eventPicker) {
+        OutgoAccountSectionHeaderView *oashView = self.sectionHeaderArray[OutgoAccountTableViewSectionEvent];
+        self.selectedEvent = [self.eventArray objectAtIndex:row];
+        oashView.valueLabel.text = self.selectedEvent.name;
+    }
 }
 
 #pragma mark - Table View DataSource
@@ -177,6 +257,11 @@ typedef NS_ENUM(NSInteger, OutgoAccountTableViewSection) {
     }
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 216.0f;
+}
+
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     if (section < OutgoAccountTableViewSectionMoney) {
@@ -184,11 +269,11 @@ typedef NS_ENUM(NSInteger, OutgoAccountTableViewSection) {
         switch (section) {
             case OutgoAccountTableViewSectionContact:
                 oashView.attrLabel.text = @"收礼人";
-                oashView.valueLabel.text = @"未选择";
+                oashView.valueLabel.text = self.selectedContact ? self.selectedContact.name : @"未选择";
                 break;
             case OutgoAccountTableViewSectionEvent:
                 oashView.attrLabel.text = @"事由";
-                oashView.valueLabel.text = @"未选择";
+                oashView.valueLabel.text = self.selectedEvent ? self.selectedEvent.name : @"未选择";
                 break;
             case OutgoAccountTableViewSectionDate:
                 oashView.attrLabel.text = @"日期";
@@ -204,13 +289,59 @@ typedef NS_ENUM(NSInteger, OutgoAccountTableViewSection) {
     }
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+#pragma mark - Close All Section
+- (void)closeAllSection
 {
-    if (indexPath.section == OutgoAccountTableViewSectionDate) {
-        return 216.0f;
-    } else {
-        return 162.f;
+    for (OutgoAccountSectionHeaderView *oashView in self.sectionHeaderArray) {
+        if (oashView.open) {
+            oashView.open = NO;
+            [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:oashView.section] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+        }
     }
 }
 
+#pragma mark - TextField Delegate
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    [self closeAllSection];
+}
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    // double XXXX.XX
+    if (![string length]) {
+        return YES;
+    }
+    NSUInteger dotLocation = [textField.text rangeOfString:@"."].location;
+    if (dotLocation == NSNotFound) {
+        if ([string isEqualToString:@"."]) {
+            return YES;
+        }
+    } else if ([[textField.text substringFromIndex:dotLocation] length] > 2) {
+        return NO;
+    }
+    
+    if ([string intValue] || [string isEqualToString:@"0"]) {
+        return YES;
+    }
+    return NO;
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    UIResponder *nextResponder = [textField.superview viewWithTag:textField.tag + 1];
+    if (nextResponder) {
+        [nextResponder becomeFirstResponder];
+    } else {
+        [textField resignFirstResponder];
+    }
+    return YES;
+}
+
+#pragma mark - TextView Delegate
+- (void)textViewDidBeginEditing:(UITextView *)textView
+{
+    [self closeAllSection];
+}
 @end

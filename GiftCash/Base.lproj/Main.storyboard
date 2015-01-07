@@ -74,6 +74,7 @@
                                     <outlet property="dateLabel" destination="50E-Re-VcX" id="ATy-LG-c0W"/>
                                     <outlet property="eventLabel" destination="jOL-8W-GE8" id="Sba-DR-yAy"/>
                                     <outlet property="moneyLabel" destination="3on-87-jBh" id="TwK-NC-jiC"/>
+                                    <segue destination="u9M-bS-TvQ" kind="show" identifier="Selection Outgo Account Segue" id="R0j-u8-SCD"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -83,13 +84,20 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="LAG-kf-48L">
-                        <barButtonItem key="leftBarButtonItem" title="编辑" id="xWz-Vy-MRa"/>
+                        <barButtonItem key="leftBarButtonItem" title="编辑" id="xWz-Vy-MRa">
+                            <connections>
+                                <action selector="editTableView:" destination="sOM-ya-Ocq" id="TSM-mk-SZ9"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="添加" id="J1U-rn-zb1">
                             <connections>
                                 <segue destination="u9M-bS-TvQ" kind="show" id="ml3-Zb-sfK"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="editBBI" destination="xWz-Vy-MRa" id="RDu-ha-52Q"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1iO-ml-0gf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -125,31 +133,32 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="金额" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rde-wN-HEE">
-                                                    <rect key="frame" x="8" y="8" width="34" height="21"/>
+                                                    <rect key="frame" x="8" y="13" width="34" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="备注" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bqj-Tl-h41">
-                                                    <rect key="frame" x="8" y="43" width="34" height="21"/>
+                                                    <rect key="frame" x="8" y="58" width="34" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4De-g9-RSS">
-                                                    <rect key="frame" x="82" y="5" width="510" height="30"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iwc-Tj-FCp">
-                                                    <rect key="frame" x="82" y="43" width="510" height="62"/>
+                                                    <rect key="frame" x="82" y="58" width="510" height="47"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4De-g9-RSS">
+                                                    <rect key="frame" x="82" y="13" width="510" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                                </textField>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottomMargin" secondItem="Iwc-Tj-FCp" secondAttribute="bottom" constant="10" id="4Hr-b5-uPV"/>
+                                                <constraint firstItem="4De-g9-RSS" firstAttribute="top" secondItem="g04-2a-Ksw" secondAttribute="topMargin" constant="5" id="9vb-dp-Jz0"/>
                                                 <constraint firstItem="Rde-wN-HEE" firstAttribute="leading" secondItem="g04-2a-Ksw" secondAttribute="leadingMargin" id="A5H-d5-HKw"/>
                                                 <constraint firstItem="Rde-wN-HEE" firstAttribute="baseline" secondItem="4De-g9-RSS" secondAttribute="baseline" id="E6h-N2-Eg2"/>
                                                 <constraint firstItem="Iwc-Tj-FCp" firstAttribute="width" secondItem="4De-g9-RSS" secondAttribute="width" id="H3L-1p-ZTr"/>
@@ -159,15 +168,19 @@
                                                 <constraint firstItem="Bqj-Tl-h41" firstAttribute="top" secondItem="Iwc-Tj-FCp" secondAttribute="top" id="cYl-0x-k4R"/>
                                                 <constraint firstItem="Bqj-Tl-h41" firstAttribute="leading" secondItem="Rde-wN-HEE" secondAttribute="leading" id="czW-Ls-bEb"/>
                                                 <constraint firstItem="4De-g9-RSS" firstAttribute="trailing" secondItem="g04-2a-Ksw" secondAttribute="trailingMargin" id="dcY-or-tH3"/>
-                                                <constraint firstItem="Iwc-Tj-FCp" firstAttribute="top" secondItem="4De-g9-RSS" secondAttribute="bottom" constant="8" symbolic="YES" id="eLy-uz-Q9g"/>
+                                                <constraint firstItem="Iwc-Tj-FCp" firstAttribute="top" secondItem="4De-g9-RSS" secondAttribute="bottom" constant="15" id="eLy-uz-Q9g"/>
                                                 <constraint firstItem="Rde-wN-HEE" firstAttribute="top" secondItem="g04-2a-Ksw" secondAttribute="topMargin" id="f1j-ri-BD5"/>
                                                 <constraint firstItem="Iwc-Tj-FCp" firstAttribute="trailing" secondItem="4De-g9-RSS" secondAttribute="trailing" id="jhS-Eh-8Y9"/>
                                                 <constraint firstItem="4De-g9-RSS" firstAttribute="leading" secondItem="Iwc-Tj-FCp" secondAttribute="leading" id="qU0-4S-VFe"/>
+                                                <constraint firstItem="Rde-wN-HEE" firstAttribute="top" secondItem="4De-g9-RSS" secondAttribute="top" id="qrY-25-4Wy"/>
                                                 <constraint firstItem="Iwc-Tj-FCp" firstAttribute="trailing" secondItem="g04-2a-Ksw" secondAttribute="trailingMargin" id="ysq-wy-cJj"/>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
+                                                    <exclude reference="E6h-N2-Eg2"/>
+                                                    <exclude reference="f1j-ri-BD5"/>
                                                     <exclude reference="KdT-Nh-VYs"/>
+                                                    <exclude reference="cYl-0x-k4R"/>
                                                     <exclude reference="qU0-4S-VFe"/>
                                                     <exclude reference="jhS-Eh-8Y9"/>
                                                 </mask>
@@ -195,13 +208,18 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" title="送礼账单" id="pKA-0I-Cdn">
-                        <barButtonItem key="rightBarButtonItem" title="完成" id="wem-kV-VT3"/>
+                        <barButtonItem key="rightBarButtonItem" title="完成" id="wem-kV-VT3">
+                            <connections>
+                                <segue destination="SrZ-ag-o9r" kind="unwind" identifier="Save Outgo Account Unwind Segue" unwindAction="saveOutgoAccountUnwindSegueAction:" id="Z03-0u-Ogv"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="njg-vr-QuR" id="Mt5-uJ-wZr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vAH-jh-Rfz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="SrZ-ag-o9r" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1564" y="284"/>
         </scene>
@@ -243,4 +261,7 @@
             <point key="canvasLocation" x="195" y="287"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="R0j-u8-SCD"/>
+    </inferredMetricsTieBreakers>
 </document>
