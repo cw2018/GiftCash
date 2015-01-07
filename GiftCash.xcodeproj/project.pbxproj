@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A65844BD1A5D1506008F8685 /* YearSelector.xib in Resources */ = {isa = PBXBuildFile; fileRef = A65844BC1A5D1506008F8685 /* YearSelector.xib */; };
+		A65844C01A5D152A008F8685 /* YearSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = A65844BF1A5D152A008F8685 /* YearSelector.m */; };
 		A65C22ED1A5BBD7700BA476A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A65C22EC1A5BBD7700BA476A /* main.m */; };
 		A65C22F01A5BBD7700BA476A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A65C22EF1A5BBD7700BA476A /* AppDelegate.m */; };
 		A65C22F91A5BBD7700BA476A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A65C22F71A5BBD7700BA476A /* Main.storyboard */; };
@@ -40,6 +42,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A65844BC1A5D1506008F8685 /* YearSelector.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = YearSelector.xib; path = view/YearSelector.xib; sourceTree = "<group>"; };
+		A65844BE1A5D152A008F8685 /* YearSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YearSelector.h; path = view/YearSelector.h; sourceTree = "<group>"; };
+		A65844BF1A5D152A008F8685 /* YearSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YearSelector.m; path = view/YearSelector.m; sourceTree = "<group>"; };
 		A65C22E71A5BBD7700BA476A /* GiftCash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GiftCash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A65C22EB1A5BBD7700BA476A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A65C22EC1A5BBD7700BA476A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -178,6 +183,9 @@
 			isa = PBXGroup;
 			children = (
 				A65C22F71A5BBD7700BA476A /* Main.storyboard */,
+				A65844BC1A5D1506008F8685 /* YearSelector.xib */,
+				A65844BE1A5D152A008F8685 /* YearSelector.h */,
+				A65844BF1A5D152A008F8685 /* YearSelector.m */,
 				A65C234E1A5C278200BA476A /* OutgoAccountMoneyTableViewCell.h */,
 				A65C234F1A5C278200BA476A /* OutgoAccountMoneyTableViewCell.m */,
 				A65C23491A5C14B600BA476A /* OutgoAccountSectionHeaderView.xib */,
@@ -288,6 +296,7 @@
 				A65C22FE1A5BBD7700BA476A /* LaunchScreen.xib in Resources */,
 				A65C234A1A5C14B600BA476A /* OutgoAccountSectionHeaderView.xib in Resources */,
 				A65C22FB1A5BBD7700BA476A /* Images.xcassets in Resources */,
+				A65844BD1A5D1506008F8685 /* YearSelector.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,6 +325,7 @@
 				A65C23181A5BBFEB00BA476A /* MainTabBarController.m in Sources */,
 				A65C233F1A5BE40300BA476A /* OutgoListTVC.m in Sources */,
 				A65C23361A5BD48500BA476A /* Income.m in Sources */,
+				A65844C01A5D152A008F8685 /* YearSelector.m in Sources */,
 				A65C234D1A5C157300BA476A /* OutgoAccountSectionHeaderView.m in Sources */,
 				A65C23451A5C04DC00BA476A /* CommonUtils.m in Sources */,
 				A65C22ED1A5BBD7700BA476A /* main.m in Sources */,

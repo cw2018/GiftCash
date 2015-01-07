@@ -10,6 +10,11 @@
 
 @interface CommonUtils : NSObject
 + (NSString *)mouthAndDayOfDate:(NSDate *)date;
++ (NSString *)yearFromDate:(NSDate *)date;
 + (NSString *)fullStringFromDate:(NSDate *)date;
+
++ (NSDate *)beginDateOfYear:(NSInteger)year;
++ (NSDate *)endDateOfYear:(NSInteger)year;
+
 + (void)defaultAlertView:(NSString *)title message:(NSString *)msg;
 @end

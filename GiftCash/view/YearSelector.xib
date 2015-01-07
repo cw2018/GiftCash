@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="YearSelector">
+            <connections>
+                <outlet property="nextBtn" destination="RlE-zg-xOS" id="GKI-5I-FhX"/>
+                <outlet property="preBtn" destination="lTz-5j-Zlf" id="TNP-HW-NBN"/>
+                <outlet property="yearLabel" destination="VSF-Gs-Mou" id="KT3-D0-738"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="120" height="33"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VSF-Gs-Mou">
+                    <rect key="frame" x="39" y="6" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lTz-5j-Zlf">
+                    <rect key="frame" x="10" y="0.0" width="21" height="34"/>
+                    <state key="normal" image="arrow_left">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="preYear:" destination="-1" eventType="touchUpInside" id="3iy-rS-bP9"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RlE-zg-xOS">
+                    <rect key="frame" x="89" y="0.0" width="22" height="34"/>
+                    <state key="normal" image="arrow_right">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="nextYear:" destination="-1" eventType="touchUpInside" id="tqB-Qa-kgf"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="RlE-zg-xOS" firstAttribute="leading" secondItem="VSF-Gs-Mou" secondAttribute="trailing" constant="8" symbolic="YES" id="465-7I-vEw"/>
+                <constraint firstItem="RlE-zg-xOS" firstAttribute="centerY" secondItem="lTz-5j-Zlf" secondAttribute="centerY" id="6BU-FG-tec"/>
+                <constraint firstItem="VSF-Gs-Mou" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="jNP-7j-CNP"/>
+                <constraint firstItem="VSF-Gs-Mou" firstAttribute="leading" secondItem="lTz-5j-Zlf" secondAttribute="trailing" constant="8" symbolic="YES" id="lR9-WO-aRS"/>
+                <constraint firstItem="RlE-zg-xOS" firstAttribute="centerY" secondItem="VSF-Gs-Mou" secondAttribute="centerY" id="tbu-aS-HgS"/>
+                <constraint firstItem="VSF-Gs-Mou" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="v7m-7z-0tz"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="415" y="30.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="arrow_left" width="21" height="34"/>
+        <image name="arrow_right" width="22" height="34"/>
+    </resources>
+</document>

@@ -84,11 +84,17 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="LAG-kf-48L">
+                        <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" title="编辑" id="xWz-Vy-MRa">
                             <connections>
                                 <action selector="editTableView:" destination="sOM-ya-Ocq" id="TSM-mk-SZ9"/>
                             </connections>
                         </barButtonItem>
+                        <view key="titleView" contentMode="scaleToFill" id="x6d-vb-heu" customClass="YearSelector">
+                            <rect key="frame" x="240" y="6" width="120" height="33"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
                         <barButtonItem key="rightBarButtonItem" title="添加" id="J1U-rn-zb1">
                             <connections>
                                 <segue destination="u9M-bS-TvQ" kind="show" id="ml3-Zb-sfK"/>
@@ -97,11 +103,12 @@
                     </navigationItem>
                     <connections>
                         <outlet property="editBBI" destination="xWz-Vy-MRa" id="RDu-ha-52Q"/>
+                        <outlet property="yearSelector" destination="x6d-vb-heu" id="TeD-E1-n07"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1iO-ml-0gf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="870" y="287"/>
+            <point key="canvasLocation" x="882" y="287"/>
         </scene>
         <!--送礼账单-->
         <scene sceneID="vgK-Az-v27">

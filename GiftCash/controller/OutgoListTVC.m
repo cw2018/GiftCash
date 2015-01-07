@@ -13,16 +13,19 @@
 #import "Event.h"
 #import "CommonUtils.h"
 #import "OutgoAccountViewController.h"
+#import "YearSelector.h"
 
-@interface OutgoListTVC ()
+@interface OutgoListTVC () <YearSelectorDelegate>
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *editBBI;
+@property (weak, nonatomic) IBOutlet YearSelector *yearSelector;
 @end
 
 @implementation OutgoListTVC
 
 - (void)performFetch {
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Account"];
-    fetchRequest.predicate = [NSPredicate predicateWithFormat:@"outgo = %@", @(1)];
+    NSInteger year = self.yearSelector.currentYear;
+    fetchRequest.predicate = [NSPredicate predicateWithFormat:@"outgo = %@ && date >= %@ && date <= %@", @(1),[CommonUtils beginDateOfYear:year], [CommonUtils endDateOfYear:year]];
     fetchRequest.sortDescriptors = @[[[NSSortDescriptor alloc] initWithKey:@"date" ascending:NO]];
     self.fetchedResultsController = [[NSFetchedResultsController alloc]
                                               initWithFetchRequest:fetchRequest
@@ -34,6 +37,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.yearSelector.delegate = self;
+    self.yearSelector.yearLabel.text = [CommonUtils yearFromDate:[NSDate date]];
     [self performFetch];
 }
 
@@ -85,6 +91,17 @@
     } else {
         self.editBBI.title = @"编辑";
     }
+}
+
+#pragma mark - Year Selector Delegate
+- (void)nextYearBtnClicked:(id)sender
+{
+    [self performFetch];
+}
+
+- (void)preYearBtnClicked:(id)sender
+{
+    [self performFetch];
 }
 
 @end
