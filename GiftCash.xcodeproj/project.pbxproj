@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		A65844BD1A5D1506008F8685 /* YearSelector.xib in Resources */ = {isa = PBXBuildFile; fileRef = A65844BC1A5D1506008F8685 /* YearSelector.xib */; };
 		A65844C01A5D152A008F8685 /* YearSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = A65844BF1A5D152A008F8685 /* YearSelector.m */; };
+		A65844C31A5D4656008F8685 /* IncomeListTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A65844C21A5D4656008F8685 /* IncomeListTVC.m */; };
+		A65844C61A5D4D0C008F8685 /* IncomeListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A65844C51A5D4D0C008F8685 /* IncomeListTableViewCell.m */; };
+		A65844C91A5D507E008F8685 /* IncomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A65844C81A5D507E008F8685 /* IncomeViewController.m */; };
 		A65C22ED1A5BBD7700BA476A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A65C22EC1A5BBD7700BA476A /* main.m */; };
 		A65C22F01A5BBD7700BA476A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A65C22EF1A5BBD7700BA476A /* AppDelegate.m */; };
 		A65C22F91A5BBD7700BA476A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A65C22F71A5BBD7700BA476A /* Main.storyboard */; };
@@ -45,6 +48,12 @@
 		A65844BC1A5D1506008F8685 /* YearSelector.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = YearSelector.xib; path = view/YearSelector.xib; sourceTree = "<group>"; };
 		A65844BE1A5D152A008F8685 /* YearSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YearSelector.h; path = view/YearSelector.h; sourceTree = "<group>"; };
 		A65844BF1A5D152A008F8685 /* YearSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YearSelector.m; path = view/YearSelector.m; sourceTree = "<group>"; };
+		A65844C11A5D4656008F8685 /* IncomeListTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IncomeListTVC.h; path = controller/IncomeListTVC.h; sourceTree = "<group>"; };
+		A65844C21A5D4656008F8685 /* IncomeListTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IncomeListTVC.m; path = controller/IncomeListTVC.m; sourceTree = "<group>"; };
+		A65844C41A5D4D0C008F8685 /* IncomeListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IncomeListTableViewCell.h; path = view/IncomeListTableViewCell.h; sourceTree = "<group>"; };
+		A65844C51A5D4D0C008F8685 /* IncomeListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IncomeListTableViewCell.m; path = view/IncomeListTableViewCell.m; sourceTree = "<group>"; };
+		A65844C71A5D507E008F8685 /* IncomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IncomeViewController.h; path = controller/IncomeViewController.h; sourceTree = "<group>"; };
+		A65844C81A5D507E008F8685 /* IncomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IncomeViewController.m; path = controller/IncomeViewController.m; sourceTree = "<group>"; };
 		A65C22E71A5BBD7700BA476A /* GiftCash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GiftCash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A65C22EB1A5BBD7700BA476A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A65C22EC1A5BBD7700BA476A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -193,6 +202,8 @@
 				A65C234C1A5C157300BA476A /* OutgoAccountSectionHeaderView.m */,
 				A65C23401A5BEAE200BA476A /* OutgoListTableViewCell.h */,
 				A65C23411A5BEAE200BA476A /* OutgoListTableViewCell.m */,
+				A65844C41A5D4D0C008F8685 /* IncomeListTableViewCell.h */,
+				A65844C51A5D4D0C008F8685 /* IncomeListTableViewCell.m */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -204,6 +215,10 @@
 				A65C233E1A5BE40300BA476A /* OutgoListTVC.m */,
 				A65C23461A5C0FCA00BA476A /* OutgoAccountViewController.h */,
 				A65C23471A5C0FCA00BA476A /* OutgoAccountViewController.m */,
+				A65844C11A5D4656008F8685 /* IncomeListTVC.h */,
+				A65844C21A5D4656008F8685 /* IncomeListTVC.m */,
+				A65844C71A5D507E008F8685 /* IncomeViewController.h */,
+				A65844C81A5D507E008F8685 /* IncomeViewController.m */,
 				A65C23161A5BBFEB00BA476A /* MainTabBarController.h */,
 				A65C23171A5BBFEB00BA476A /* MainTabBarController.m */,
 				A65C233A1A5BD96A00BA476A /* CoreDataTableViewController.h */,
@@ -318,6 +333,7 @@
 				A65C23421A5BEAE200BA476A /* OutgoListTableViewCell.m in Sources */,
 				A65C232D1A5BD46B00BA476A /* GiftCash.xcdatamodeld in Sources */,
 				A65C22F01A5BBD7700BA476A /* AppDelegate.m in Sources */,
+				A65844C91A5D507E008F8685 /* IncomeViewController.m in Sources */,
 				A65C23501A5C278200BA476A /* OutgoAccountMoneyTableViewCell.m in Sources */,
 				A65C233C1A5BD96A00BA476A /* CoreDataTableViewController.m in Sources */,
 				A65C23331A5BD48500BA476A /* Event.m in Sources */,
@@ -328,7 +344,9 @@
 				A65844C01A5D152A008F8685 /* YearSelector.m in Sources */,
 				A65C234D1A5C157300BA476A /* OutgoAccountSectionHeaderView.m in Sources */,
 				A65C23451A5C04DC00BA476A /* CommonUtils.m in Sources */,
+				A65844C61A5D4D0C008F8685 /* IncomeListTableViewCell.m in Sources */,
 				A65C22ED1A5BBD7700BA476A /* main.m in Sources */,
+				A65844C31A5D4656008F8685 /* IncomeListTVC.m in Sources */,
 				A65C23481A5C0FCA00BA476A /* OutgoAccountViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
