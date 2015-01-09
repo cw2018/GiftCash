@@ -12,6 +12,7 @@
 #import "Event.h"
 #import "CommonUtils.h"
 #import "IncomeViewController.h"
+#import "IncomeAccountListTVC.h"
 
 @interface IncomeListTVC ()
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *editBBI;
@@ -30,6 +31,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+//    [self performFetch];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
     [self performFetch];
 }
 
@@ -67,6 +74,11 @@
             incomeVC.income = [self.fetchedResultsController objectAtIndexPath:indexPath];
         }
         incomeVC.context = self.context;
+    } else if ([segue.destinationViewController isKindOfClass:[IncomeAccountListTVC class]]) {
+        IncomeAccountListTVC *ialTVC = segue.destinationViewController;
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+        ialTVC.income = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        ialTVC.context = self.context;
     }
 }
 

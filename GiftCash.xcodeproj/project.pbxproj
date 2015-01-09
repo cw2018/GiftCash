@@ -12,6 +12,9 @@
 		A65844C31A5D4656008F8685 /* IncomeListTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A65844C21A5D4656008F8685 /* IncomeListTVC.m */; };
 		A65844C61A5D4D0C008F8685 /* IncomeListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A65844C51A5D4D0C008F8685 /* IncomeListTableViewCell.m */; };
 		A65844C91A5D507E008F8685 /* IncomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A65844C81A5D507E008F8685 /* IncomeViewController.m */; };
+		A65844CC1A5F9A49008F8685 /* IncomeAccountListTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A65844CB1A5F9A49008F8685 /* IncomeAccountListTVC.m */; };
+		A65844CF1A5F9BE7008F8685 /* IncomeAccountListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A65844CE1A5F9BE7008F8685 /* IncomeAccountListTableViewCell.m */; };
+		A65844D21A5FABD4008F8685 /* IncomeAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A65844D11A5FABD4008F8685 /* IncomeAccountViewController.m */; };
 		A65C22ED1A5BBD7700BA476A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A65C22EC1A5BBD7700BA476A /* main.m */; };
 		A65C22F01A5BBD7700BA476A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A65C22EF1A5BBD7700BA476A /* AppDelegate.m */; };
 		A65C22F91A5BBD7700BA476A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A65C22F71A5BBD7700BA476A /* Main.storyboard */; };
@@ -54,6 +57,12 @@
 		A65844C51A5D4D0C008F8685 /* IncomeListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IncomeListTableViewCell.m; path = view/IncomeListTableViewCell.m; sourceTree = "<group>"; };
 		A65844C71A5D507E008F8685 /* IncomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IncomeViewController.h; path = controller/IncomeViewController.h; sourceTree = "<group>"; };
 		A65844C81A5D507E008F8685 /* IncomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IncomeViewController.m; path = controller/IncomeViewController.m; sourceTree = "<group>"; };
+		A65844CA1A5F9A49008F8685 /* IncomeAccountListTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IncomeAccountListTVC.h; path = controller/IncomeAccountListTVC.h; sourceTree = "<group>"; };
+		A65844CB1A5F9A49008F8685 /* IncomeAccountListTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IncomeAccountListTVC.m; path = controller/IncomeAccountListTVC.m; sourceTree = "<group>"; };
+		A65844CD1A5F9BE7008F8685 /* IncomeAccountListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IncomeAccountListTableViewCell.h; path = view/IncomeAccountListTableViewCell.h; sourceTree = "<group>"; };
+		A65844CE1A5F9BE7008F8685 /* IncomeAccountListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IncomeAccountListTableViewCell.m; path = view/IncomeAccountListTableViewCell.m; sourceTree = "<group>"; };
+		A65844D01A5FABD4008F8685 /* IncomeAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IncomeAccountViewController.h; path = controller/IncomeAccountViewController.h; sourceTree = "<group>"; };
+		A65844D11A5FABD4008F8685 /* IncomeAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IncomeAccountViewController.m; path = controller/IncomeAccountViewController.m; sourceTree = "<group>"; };
 		A65C22E71A5BBD7700BA476A /* GiftCash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GiftCash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A65C22EB1A5BBD7700BA476A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A65C22EC1A5BBD7700BA476A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -204,6 +213,8 @@
 				A65C23411A5BEAE200BA476A /* OutgoListTableViewCell.m */,
 				A65844C41A5D4D0C008F8685 /* IncomeListTableViewCell.h */,
 				A65844C51A5D4D0C008F8685 /* IncomeListTableViewCell.m */,
+				A65844CD1A5F9BE7008F8685 /* IncomeAccountListTableViewCell.h */,
+				A65844CE1A5F9BE7008F8685 /* IncomeAccountListTableViewCell.m */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -219,6 +230,10 @@
 				A65844C21A5D4656008F8685 /* IncomeListTVC.m */,
 				A65844C71A5D507E008F8685 /* IncomeViewController.h */,
 				A65844C81A5D507E008F8685 /* IncomeViewController.m */,
+				A65844CA1A5F9A49008F8685 /* IncomeAccountListTVC.h */,
+				A65844CB1A5F9A49008F8685 /* IncomeAccountListTVC.m */,
+				A65844D01A5FABD4008F8685 /* IncomeAccountViewController.h */,
+				A65844D11A5FABD4008F8685 /* IncomeAccountViewController.m */,
 				A65C23161A5BBFEB00BA476A /* MainTabBarController.h */,
 				A65C23171A5BBFEB00BA476A /* MainTabBarController.m */,
 				A65C233A1A5BD96A00BA476A /* CoreDataTableViewController.h */,
@@ -338,14 +353,17 @@
 				A65C233C1A5BD96A00BA476A /* CoreDataTableViewController.m in Sources */,
 				A65C23331A5BD48500BA476A /* Event.m in Sources */,
 				A65C23301A5BD48400BA476A /* Contact.m in Sources */,
+				A65844D21A5FABD4008F8685 /* IncomeAccountViewController.m in Sources */,
 				A65C23181A5BBFEB00BA476A /* MainTabBarController.m in Sources */,
 				A65C233F1A5BE40300BA476A /* OutgoListTVC.m in Sources */,
 				A65C23361A5BD48500BA476A /* Income.m in Sources */,
 				A65844C01A5D152A008F8685 /* YearSelector.m in Sources */,
 				A65C234D1A5C157300BA476A /* OutgoAccountSectionHeaderView.m in Sources */,
+				A65844CC1A5F9A49008F8685 /* IncomeAccountListTVC.m in Sources */,
 				A65C23451A5C04DC00BA476A /* CommonUtils.m in Sources */,
 				A65844C61A5D4D0C008F8685 /* IncomeListTableViewCell.m in Sources */,
 				A65C22ED1A5BBD7700BA476A /* main.m in Sources */,
+				A65844CF1A5F9BE7008F8685 /* IncomeAccountListTableViewCell.m in Sources */,
 				A65844C31A5D4656008F8685 /* IncomeListTVC.m in Sources */,
 				A65C23481A5C0FCA00BA476A /* OutgoAccountViewController.m in Sources */,
 			);
