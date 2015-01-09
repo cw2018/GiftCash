@@ -15,6 +15,10 @@
 		A65844CC1A5F9A49008F8685 /* IncomeAccountListTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A65844CB1A5F9A49008F8685 /* IncomeAccountListTVC.m */; };
 		A65844CF1A5F9BE7008F8685 /* IncomeAccountListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A65844CE1A5F9BE7008F8685 /* IncomeAccountListTableViewCell.m */; };
 		A65844D21A5FABD4008F8685 /* IncomeAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A65844D11A5FABD4008F8685 /* IncomeAccountViewController.m */; };
+		A65844D51A601854008F8685 /* ContactListTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A65844D41A601854008F8685 /* ContactListTVC.m */; };
+		A65844D81A601FB1008F8685 /* ContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A65844D71A601FB1008F8685 /* ContactViewController.m */; };
+		A65844DA1A6023B0008F8685 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A65844D91A6023B0008F8685 /* AddressBook.framework */; };
+		A65844DC1A6023B6008F8685 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A65844DB1A6023B6008F8685 /* AddressBookUI.framework */; };
 		A65C22ED1A5BBD7700BA476A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A65C22EC1A5BBD7700BA476A /* main.m */; };
 		A65C22F01A5BBD7700BA476A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A65C22EF1A5BBD7700BA476A /* AppDelegate.m */; };
 		A65C22F91A5BBD7700BA476A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A65C22F71A5BBD7700BA476A /* Main.storyboard */; };
@@ -63,6 +67,12 @@
 		A65844CE1A5F9BE7008F8685 /* IncomeAccountListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IncomeAccountListTableViewCell.m; path = view/IncomeAccountListTableViewCell.m; sourceTree = "<group>"; };
 		A65844D01A5FABD4008F8685 /* IncomeAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IncomeAccountViewController.h; path = controller/IncomeAccountViewController.h; sourceTree = "<group>"; };
 		A65844D11A5FABD4008F8685 /* IncomeAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IncomeAccountViewController.m; path = controller/IncomeAccountViewController.m; sourceTree = "<group>"; };
+		A65844D31A601854008F8685 /* ContactListTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContactListTVC.h; path = controller/ContactListTVC.h; sourceTree = "<group>"; };
+		A65844D41A601854008F8685 /* ContactListTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContactListTVC.m; path = controller/ContactListTVC.m; sourceTree = "<group>"; };
+		A65844D61A601FB1008F8685 /* ContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContactViewController.h; path = controller/ContactViewController.h; sourceTree = "<group>"; };
+		A65844D71A601FB1008F8685 /* ContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContactViewController.m; path = controller/ContactViewController.m; sourceTree = "<group>"; };
+		A65844D91A6023B0008F8685 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		A65844DB1A6023B6008F8685 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		A65C22E71A5BBD7700BA476A /* GiftCash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GiftCash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A65C22EB1A5BBD7700BA476A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A65C22EC1A5BBD7700BA476A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -107,6 +117,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A65844DC1A6023B6008F8685 /* AddressBookUI.framework in Frameworks */,
+				A65844DA1A6023B0008F8685 /* AddressBook.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,6 +135,8 @@
 		A65C22DE1A5BBD7700BA476A = {
 			isa = PBXGroup;
 			children = (
+				A65844DB1A6023B6008F8685 /* AddressBookUI.framework */,
+				A65844D91A6023B0008F8685 /* AddressBook.framework */,
 				A65C22E91A5BBD7700BA476A /* GiftCash */,
 				A65C23061A5BBD7800BA476A /* GiftCashTests */,
 				A65C22E81A5BBD7700BA476A /* Products */,
@@ -234,6 +248,10 @@
 				A65844CB1A5F9A49008F8685 /* IncomeAccountListTVC.m */,
 				A65844D01A5FABD4008F8685 /* IncomeAccountViewController.h */,
 				A65844D11A5FABD4008F8685 /* IncomeAccountViewController.m */,
+				A65844D31A601854008F8685 /* ContactListTVC.h */,
+				A65844D41A601854008F8685 /* ContactListTVC.m */,
+				A65844D61A601FB1008F8685 /* ContactViewController.h */,
+				A65844D71A601FB1008F8685 /* ContactViewController.m */,
 				A65C23161A5BBFEB00BA476A /* MainTabBarController.h */,
 				A65C23171A5BBFEB00BA476A /* MainTabBarController.m */,
 				A65C233A1A5BD96A00BA476A /* CoreDataTableViewController.h */,
@@ -357,7 +375,9 @@
 				A65C23181A5BBFEB00BA476A /* MainTabBarController.m in Sources */,
 				A65C233F1A5BE40300BA476A /* OutgoListTVC.m in Sources */,
 				A65C23361A5BD48500BA476A /* Income.m in Sources */,
+				A65844D81A601FB1008F8685 /* ContactViewController.m in Sources */,
 				A65844C01A5D152A008F8685 /* YearSelector.m in Sources */,
+				A65844D51A601854008F8685 /* ContactListTVC.m in Sources */,
 				A65C234D1A5C157300BA476A /* OutgoAccountSectionHeaderView.m in Sources */,
 				A65844CC1A5F9A49008F8685 /* IncomeAccountListTVC.m in Sources */,
 				A65C23451A5C04DC00BA476A /* CommonUtils.m in Sources */,

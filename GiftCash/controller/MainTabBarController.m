@@ -9,6 +9,7 @@
 #import "MainTabBarController.h"
 #import "OutgoListTVC.h"
 #import "IncomeListTVC.h"
+#import "ContactListTVC.h"
 
 @interface MainTabBarController () <UITabBarControllerDelegate>
 
@@ -44,6 +45,13 @@
             UINavigationController *nc = (UINavigationController *)viewController;
             IncomeListTVC *vc = (IncomeListTVC *)nc.topViewController;
             vc.context = self.context;
+        }
+        case 2:
+        {
+            UINavigationController *nc = (UINavigationController *)viewController;
+            ContactListTVC *vc = (ContactListTVC *)nc.topViewController;
+            vc.context = self.context;
+            break;
         }
         default:
             break;
