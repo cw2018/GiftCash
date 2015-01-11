@@ -40,6 +40,8 @@
 		A65C234D1A5C157300BA476A /* OutgoAccountSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = A65C234C1A5C157300BA476A /* OutgoAccountSectionHeaderView.m */; };
 		A65C23501A5C278200BA476A /* OutgoAccountMoneyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A65C234F1A5C278200BA476A /* OutgoAccountMoneyTableViewCell.m */; };
 		A66C25B01A624B83001A9831 /* Contact+WithUniqueName.m in Sources */ = {isa = PBXBuildFile; fileRef = A66C25AF1A624B83001A9831 /* Contact+WithUniqueName.m */; };
+		A66C25B31A624FD7001A9831 /* ContactAccountTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A66C25B21A624FD7001A9831 /* ContactAccountTVC.m */; };
+		A66C25B61A62513C001A9831 /* ContactAccountTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A66C25B51A62513C001A9831 /* ContactAccountTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +115,10 @@
 		A65C234F1A5C278200BA476A /* OutgoAccountMoneyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OutgoAccountMoneyTableViewCell.m; path = view/OutgoAccountMoneyTableViewCell.m; sourceTree = "<group>"; };
 		A66C25AE1A624B83001A9831 /* Contact+WithUniqueName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Contact+WithUniqueName.h"; path = "model/Contact+WithUniqueName.h"; sourceTree = "<group>"; };
 		A66C25AF1A624B83001A9831 /* Contact+WithUniqueName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Contact+WithUniqueName.m"; path = "model/Contact+WithUniqueName.m"; sourceTree = "<group>"; };
+		A66C25B11A624FD7001A9831 /* ContactAccountTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContactAccountTVC.h; path = controller/ContactAccountTVC.h; sourceTree = "<group>"; };
+		A66C25B21A624FD7001A9831 /* ContactAccountTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContactAccountTVC.m; path = controller/ContactAccountTVC.m; sourceTree = "<group>"; };
+		A66C25B41A62513C001A9831 /* ContactAccountTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContactAccountTableViewCell.h; path = view/ContactAccountTableViewCell.h; sourceTree = "<group>"; };
+		A66C25B51A62513C001A9831 /* ContactAccountTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContactAccountTableViewCell.m; path = view/ContactAccountTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,6 +240,8 @@
 				A65844C51A5D4D0C008F8685 /* IncomeListTableViewCell.m */,
 				A65844CD1A5F9BE7008F8685 /* IncomeAccountListTableViewCell.h */,
 				A65844CE1A5F9BE7008F8685 /* IncomeAccountListTableViewCell.m */,
+				A66C25B41A62513C001A9831 /* ContactAccountTableViewCell.h */,
+				A66C25B51A62513C001A9831 /* ContactAccountTableViewCell.m */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -257,6 +265,8 @@
 				A65844D41A601854008F8685 /* ContactListTVC.m */,
 				A65844D61A601FB1008F8685 /* ContactViewController.h */,
 				A65844D71A601FB1008F8685 /* ContactViewController.m */,
+				A66C25B11A624FD7001A9831 /* ContactAccountTVC.h */,
+				A66C25B21A624FD7001A9831 /* ContactAccountTVC.m */,
 				A65C23161A5BBFEB00BA476A /* MainTabBarController.h */,
 				A65C23171A5BBFEB00BA476A /* MainTabBarController.m */,
 				A65C233A1A5BD96A00BA476A /* CoreDataTableViewController.h */,
@@ -373,6 +383,7 @@
 				A65C22F01A5BBD7700BA476A /* AppDelegate.m in Sources */,
 				A65844C91A5D507E008F8685 /* IncomeViewController.m in Sources */,
 				A65C23501A5C278200BA476A /* OutgoAccountMoneyTableViewCell.m in Sources */,
+				A66C25B61A62513C001A9831 /* ContactAccountTableViewCell.m in Sources */,
 				A65C233C1A5BD96A00BA476A /* CoreDataTableViewController.m in Sources */,
 				A65C23331A5BD48500BA476A /* Event.m in Sources */,
 				A65C23301A5BD48400BA476A /* Contact.m in Sources */,
@@ -387,6 +398,7 @@
 				A65C234D1A5C157300BA476A /* OutgoAccountSectionHeaderView.m in Sources */,
 				A65844CC1A5F9A49008F8685 /* IncomeAccountListTVC.m in Sources */,
 				A65C23451A5C04DC00BA476A /* CommonUtils.m in Sources */,
+				A66C25B31A624FD7001A9831 /* ContactAccountTVC.m in Sources */,
 				A65844C61A5D4D0C008F8685 /* IncomeListTableViewCell.m in Sources */,
 				A65C22ED1A5BBD7700BA476A /* main.m in Sources */,
 				A65844CF1A5F9BE7008F8685 /* IncomeAccountListTableViewCell.m in Sources */,

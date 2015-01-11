@@ -9,6 +9,7 @@
 #import "ContactListTVC.h"
 #import "Contact.h"
 #import "ContactViewController.h"
+#import "ContactAccountTVC.h"
 
 @interface ContactListTVC ()
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *editBBI;
@@ -55,6 +56,11 @@
             contactVC.contact = [self.fetchedResultsController objectAtIndexPath:indexPath];
         }
         contactVC.context = self.context;
+    } else if ([segue.destinationViewController isKindOfClass:[ContactAccountTVC class]]){
+        ContactAccountTVC *contactTVC = segue.destinationViewController;
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+        contactTVC.contact = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        contactTVC.context = self.context;
     }
 }
 
