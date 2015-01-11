@@ -39,6 +39,7 @@
 		A65C234A1A5C14B600BA476A /* OutgoAccountSectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A65C23491A5C14B600BA476A /* OutgoAccountSectionHeaderView.xib */; };
 		A65C234D1A5C157300BA476A /* OutgoAccountSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = A65C234C1A5C157300BA476A /* OutgoAccountSectionHeaderView.m */; };
 		A65C23501A5C278200BA476A /* OutgoAccountMoneyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A65C234F1A5C278200BA476A /* OutgoAccountMoneyTableViewCell.m */; };
+		A66C25B01A624B83001A9831 /* Contact+WithUniqueName.m in Sources */ = {isa = PBXBuildFile; fileRef = A66C25AF1A624B83001A9831 /* Contact+WithUniqueName.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +111,8 @@
 		A65C234C1A5C157300BA476A /* OutgoAccountSectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OutgoAccountSectionHeaderView.m; path = view/OutgoAccountSectionHeaderView.m; sourceTree = "<group>"; };
 		A65C234E1A5C278200BA476A /* OutgoAccountMoneyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OutgoAccountMoneyTableViewCell.h; path = view/OutgoAccountMoneyTableViewCell.h; sourceTree = "<group>"; };
 		A65C234F1A5C278200BA476A /* OutgoAccountMoneyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OutgoAccountMoneyTableViewCell.m; path = view/OutgoAccountMoneyTableViewCell.m; sourceTree = "<group>"; };
+		A66C25AE1A624B83001A9831 /* Contact+WithUniqueName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Contact+WithUniqueName.h"; path = "model/Contact+WithUniqueName.h"; sourceTree = "<group>"; };
+		A66C25AF1A624B83001A9831 /* Contact+WithUniqueName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Contact+WithUniqueName.m"; path = "model/Contact+WithUniqueName.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +208,8 @@
 				A65C23321A5BD48500BA476A /* Event.m */,
 				A65C232E1A5BD48400BA476A /* Contact.h */,
 				A65C232F1A5BD48400BA476A /* Contact.m */,
+				A66C25AE1A624B83001A9831 /* Contact+WithUniqueName.h */,
+				A66C25AF1A624B83001A9831 /* Contact+WithUniqueName.m */,
 				A65C23251A5BD35800BA476A /* Account.h */,
 				A65C23261A5BD35800BA476A /* Account.m */,
 			);
@@ -373,6 +378,7 @@
 				A65C23301A5BD48400BA476A /* Contact.m in Sources */,
 				A65844D21A5FABD4008F8685 /* IncomeAccountViewController.m in Sources */,
 				A65C23181A5BBFEB00BA476A /* MainTabBarController.m in Sources */,
+				A66C25B01A624B83001A9831 /* Contact+WithUniqueName.m in Sources */,
 				A65C233F1A5BE40300BA476A /* OutgoListTVC.m in Sources */,
 				A65C23361A5BD48500BA476A /* Income.m in Sources */,
 				A65844D81A601FB1008F8685 /* ContactViewController.m in Sources */,

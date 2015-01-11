@@ -59,6 +59,19 @@
             [CommonUtils defaultAlertView:@"保存联系人" message:@"姓名不能为空"];
             return NO;
         }
+        Contact *existContact = [Contact contactWithUniqueName:name inManagedObjectContext:self.context];
+        if (existContact)
+        {
+            if (!self.contact) {
+                // add contact
+                [CommonUtils defaultAlertView:@"保存联系人" message:@"姓名已经存在，不能重复"];
+                return NO;
+            } else if (self.contact && self.contact != existContact){
+                // edit contact
+                [CommonUtils defaultAlertView:@"保存联系人" message:@"姓名已经存在，不能重复"];
+                return NO;
+            }
+        }
         return YES;
     }
     return [super shouldPerformSegueWithIdentifier:identifier sender:sender];

@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Contact.h"
+#import "Contact+WithUniqueName.h"
 
 @interface ContactViewController : UIViewController
 @property (strong, nonatomic) NSManagedObjectContext *context;
