@@ -10,6 +10,7 @@
 #import "Contact.h"
 #import "ContactViewController.h"
 #import "ContactAccountTVC.h"
+#import "CommonUtils.h"
 
 @interface ContactListTVC ()
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *editBBI;
@@ -81,6 +82,19 @@
     Contact *contact = [self.fetchedResultsController objectAtIndexPath:indexPath];
     cell.textLabel.text = contact.name;
     return cell;
+}
+
+#pragma mark - TableView Delegate
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        Contact *contact = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        if ([contact.accounts count]) {
+            [CommonUtils defaultAlertView:@"删除联系人" message:@"不能删除！有与此联系人相关的账单"];
+        } else {
+            [super tableView:tableView commitEditingStyle:editingStyle forRowAtIndexPath:indexPath];
+        }
+    }
 }
 
 @end
