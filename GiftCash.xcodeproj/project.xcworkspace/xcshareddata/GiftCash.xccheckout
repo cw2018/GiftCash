@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>2C9F2D74-3267-4C56-8FFE-ABB448A113F5</string>
+	<key>IDESourceControlProjectName</key>
+	<string>GiftCash</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>E17990F52B556366AD2F955EBFACF025FA41FBC9</key>
+		<string>github.com:evayuhz/GiftCash.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>GiftCash.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>E17990F52B556366AD2F955EBFACF025FA41FBC9</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:evayuhz/GiftCash.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>E17990F52B556366AD2F955EBFACF025FA41FBC9</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>E17990F52B556366AD2F955EBFACF025FA41FBC9</string>
+			<key>IDESourceControlWCCName</key>
+			<string>GiftCash</string>
+		</dict>
+	</array>
+</dict>
+</plist>
