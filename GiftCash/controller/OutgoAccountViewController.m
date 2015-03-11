@@ -42,47 +42,93 @@ typedef NS_ENUM(NSInteger, OutgoAccountTableViewSection) {
     OutgoAccountTableViewSectionMax
 };
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    self.contactPicker = [[UIPickerView alloc] init];
-    self.contactPicker.delegate = self;
-    self.contactPicker.dataSource = self;
-    
-    self.eventPicker = [[UIPickerView alloc] init];
-    self.eventPicker.delegate = self;
-    self.eventPicker.dataSource = self;
-    
-    self.datePicker = [[UIDatePicker alloc] init];
-    self.datePicker.locale = [NSLocale localeWithLocaleIdentifier:@"zh_CH"];
-    self.datePicker.datePickerMode = UIDatePickerModeDate;
-    [self.datePicker addTarget:self action:@selector(selectDate) forControlEvents:UIControlEventValueChanged];
-    
-    NSFetchRequest *contactRequest = [NSFetchRequest fetchRequestWithEntityName:@"Contact"];
-    contactRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES selector:@selector(localizedStandardCompare:)]];
-    self.contactArray = [self.context executeFetchRequest:contactRequest error:nil];
-    
-    NSFetchRequest *eventRequest = [NSFetchRequest fetchRequestWithEntityName:@"Event"];
-    eventRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES selector:@selector(localizedStandardCompare:)]];
-    self.eventArray = [self.context executeFetchRequest:eventRequest error:nil];
-    
-    self.sectionHeaderArray = [[NSMutableArray alloc] init];
-    self.outgoAccountPickerCellArray = [[NSMutableArray alloc] init];
-    for (int section = 0; section < OutgoAccountTableViewSectionMoney; section++) {
-        OutgoAccountSectionHeaderView *oashView = [[OutgoAccountSectionHeaderView alloc] init];
-        oashView.section = section;
-        oashView.open = NO;
-        
-        UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapSectionHeader:)];
-        [oashView addGestureRecognizer:tapGesture];
-        [self.sectionHeaderArray addObject:oashView];
-        
-        [self.outgoAccountPickerCellArray addObject:[[UITableViewCell alloc] init]];
+- (UIPickerView *)contactPicker
+{
+    if (!_contactPicker) {
+        _contactPicker = [[UIPickerView alloc] initWithFrame:CGRectZero];
+        _contactPicker.delegate = self;
+        _contactPicker.dataSource = self;
+        _contactPicker.translatesAutoresizingMaskIntoConstraints = NO;
     }
+    return _contactPicker;
+}
+
+- (UIPickerView *)eventPicker
+{
+    if (!_eventPicker) {
+        _eventPicker = [[UIPickerView alloc] initWithFrame:CGRectZero];
+        _eventPicker.delegate = self;
+        _eventPicker.dataSource = self;
+        _eventPicker.translatesAutoresizingMaskIntoConstraints = NO;
+    }
+    return _eventPicker;
+}
+
+- (UIDatePicker *)datePicker
+{
+    if (!_datePicker) {
+        _datePicker = [[UIDatePicker alloc] initWithFrame:CGRectZero];
+        _datePicker.locale = [NSLocale localeWithLocaleIdentifier:@"zh_CH"];
+        _datePicker.datePickerMode = UIDatePickerModeDate;
+        _datePicker.translatesAutoresizingMaskIntoConstraints = NO;
+        [_datePicker addTarget:self action:@selector(selectDate) forControlEvents:UIControlEventValueChanged];
+    }
+    return _datePicker;
+}
+
+- (NSArray *)contactArray
+{
+    if (!_contactArray) {
+        NSFetchRequest *contactRequest = [NSFetchRequest fetchRequestWithEntityName:@"Contact"];
+        contactRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES selector:@selector(localizedStandardCompare:)]];
+        _contactArray = [self.context executeFetchRequest:contactRequest error:nil];
+    }
+    return _contactArray;
+}
+
+- (NSArray *)eventArray
+{
+    if (!_eventArray) {
+        NSFetchRequest *eventRequest = [NSFetchRequest fetchRequestWithEntityName:@"Event"];
+        eventRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES selector:@selector(localizedStandardCompare:)]];
+        _eventArray = [self.context executeFetchRequest:eventRequest error:nil];
+    }
+    return _eventArray;
+}
+
+- (NSMutableArray *)sectionHeaderArray
+{
+    if (!_sectionHeaderArray) {
+        _sectionHeaderArray = [[NSMutableArray alloc] init];
+        for (int section = 0; section < OutgoAccountTableViewSectionMoney; section++) {
+            OutgoAccountSectionHeaderView *oashView = [[OutgoAccountSectionHeaderView alloc] init];
+            oashView.section = section;
+            oashView.open = NO;
+            
+            UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapSectionHeader:)];
+            [oashView addGestureRecognizer:tapGesture];
+            [self.sectionHeaderArray addObject:oashView];
+        }
+    }
+    return _sectionHeaderArray;
+}
+
+- (NSMutableArray *)outgoAccountPickerCellArray
+{
+    if (!_outgoAccountPickerCellArray) {
+        _outgoAccountPickerCellArray = [[NSMutableArray alloc] init];
+        for (int section = 0; section < OutgoAccountTableViewSectionMoney; section++) {
+            [self.outgoAccountPickerCellArray addObject:[[UITableViewCell alloc] init]];
+        }
+    }
+    return _outgoAccountPickerCellArray;
+}
+
+- (void)initTableCellArray
+{
     [self.outgoAccountPickerCellArray[OutgoAccountTableViewSectionContact] addSubview:self.contactPicker];
     [self.outgoAccountPickerCellArray[OutgoAccountTableViewSectionEvent] addSubview:self.eventPicker];
     [self.outgoAccountPickerCellArray[OutgoAccountTableViewSectionDate] addSubview:self.datePicker];
-    
     OutgoAccountMoneyTableViewCell *moneyCell = [self.tableView dequeueReusableCellWithIdentifier:@"Outgo Account Money Cell"];
     moneyCell.moneyTF.delegate = self;
     moneyCell.moneyTF.tag = 1;
@@ -93,8 +139,8 @@ typedef NS_ENUM(NSInteger, OutgoAccountTableViewSection) {
     [moneyCell.noteTV.layer setBorderWidth:1.0];
     moneyCell.noteTV.layer.cornerRadius = 5;
     moneyCell.noteTV.clipsToBounds = YES;
-    self.outgoAccountPickerCellArray[OutgoAccountTableViewSectionMoney] = moneyCell;
     
+    self.outgoAccountPickerCellArray[OutgoAccountTableViewSectionMoney] = moneyCell;
     
     if (self.account) {
         self.selectedContact = self.account.contact;
@@ -109,7 +155,26 @@ typedef NS_ENUM(NSInteger, OutgoAccountTableViewSection) {
         self.navigationItem.title = @"添加送礼账单";
         self.datePicker.date = [NSDate date];
     }
+}
+
+- (void)addConstraintToPickerView:(UIView *)view
+{
+    NSLayoutConstraint *leftConstraint = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:view.superview attribute:NSLayoutAttributeLeading multiplier:1.0f constant:0.0f];
+    NSLayoutConstraint *rightConstraint = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:view.superview attribute:NSLayoutAttributeTrailing multiplier:1.0f constant:0.0f];
+    [view.superview addConstraint:leftConstraint];
+    [view.superview addConstraint:rightConstraint];
+}
+
+
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
     
+    [self initTableCellArray];
+    [self addConstraintToPickerView:self.contactPicker];
+    [self addConstraintToPickerView:self.eventPicker];
+    [self addConstraintToPickerView:self.datePicker];
 }
 
 - (void)selectDate {
@@ -344,4 +409,5 @@ typedef NS_ENUM(NSInteger, OutgoAccountTableViewSection) {
 {
     [self closeAllSection];
 }
+
 @end
