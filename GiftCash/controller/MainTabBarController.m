@@ -29,6 +29,12 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator
+{
+//    NSLog(@"Device orinetation changed!");
+    [self.selectedViewController viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
+}
+
 #pragma mark - TabBarController Delegate
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
 {
